@@ -1,4 +1,5 @@
 const { generateDtsBundle } = require('dts-bundle-generator');
+const loaderUtils = require('loader-utils');
 
 const runTest = (test, value) => {
   if (test instanceof RegExp) {
@@ -11,8 +12,9 @@ const runTest = (test, value) => {
 }
 
 module.exports = class DtsBundlePlugin {
-	constructor({ test = /\.tsx?$/ } = {}) {
+	constructor({ test = /\.tsx?$/, name = '[name].d.ts' } = {}) {
 		this.test = test;
+		this.name = name;
 	}
 
 	apply(compiler) {
@@ -21,6 +23,14 @@ module.exports = class DtsBundlePlugin {
 				for (const module of chunk.modulesIterable) {
 					if (module.issuer && module.issuer.depth === 0 && runTest(this.test, module.resource)) {
 						const dts = generateDtsBundle(module.resource);
+						const dtsName = loaderUtils.interpolateName(
+							{
+								resourcePath: chunk.name + '.js',
+							},
+							this.name,
+							{},
+						);
+						
 						compilation.assets[`${chunk.name}.d.ts`] = {
 							source() {
 								return dts;

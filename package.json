@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/eliraz-refael/dts-webpack-bundler#readme",
   "dependencies": {
-    "dts-bundle-generator": "^1.6.1"
+    "dts-bundle-generator": "^1.6.1",
+    "loader-utils": "^1.1.0"
   }
 }

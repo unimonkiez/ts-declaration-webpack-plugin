@@ -34,6 +34,7 @@ $ npm install dts-webpack-bundler --save-dev
 ### Options
 ```js
 new DtsWebpackBundler({
+    name: '[name].d.ts', // Not required, '[name].d.ts' by default (to match output fileName)
     test: /\.tsx$/, // Not required, filters '.ts' and '.tsx' by default
 })
 ```
