@@ -1,8 +1,6 @@
 # dts-webpack-bundler
 
-This Webpack plugin generate a single TypeScript *.d.ts declaration file per entry (per chunk) using [dts-bundle](https://github.com/TypeStrong/dts-bundle).
-
-*Currently supporting only webpack v3.x*
+This Webpack plugin generate a single TypeScript *.d.ts declaration file per entry.
 
 ### Installation
 
@@ -12,39 +10,33 @@ $ npm install dts-webpack-bundler --save-dev
 
 ### Usage
 
-##### First you need to add the following to tsconfig.json:
-#### NOTE: currently this plugin support only declaration files that are gathered into a single folder so, please make sure you're using `"declarationDir"` properly.
+* Simply add the plugin to `webpack.config.js`:
 
-```javascript
-{
-    "compilerOptions": {
-        // ...
-        "declaration": true,
-        "declarationDir": "./typings/"
+    ```javascript
+    const DtsWebpackBundler = require('dts-webpack-bundler');
+
+    module.exports = {
+        entry: {
+            app: './src/main.ts',
+            component: './src/component.tsx',
+        },
+        output: {
+            path: path.resolve('./dist'),
+            filename: '[name].js'
+        },
+        plugins: [
+            new DtsWebpackBundler()
+        ]
     }
-}
+    ```
+* Done! will generate `app.d.ts` and `component.d.ts` next to the `js` files in `dist` folder!
+
+### Options
+```js
+new DtsWebpackBundler({
+    test: /\.tsx$/, // Not required, filters '.ts' and '.tsx' by default
+})
 ```
 
-##### Then in your webpack.config.js:
-
-```javascript
-const DtsWebpackBundler = require('dts-webpack-bundler');
-
-module.exports = {
-    entry: './src/main.ts',
-    output: {
-        path: path.resolve('./dist'),
-        filename: 'index.js'
-    },
-    plugins: [
-        new DtsWebpackBundler({
-			libName: 'library-name',
-			typingsDir: path.resolve(process.cwd(), 'typings'),
-			outputDir: path.resolve(process.cwd(), 'build'),
-			deleteSource: true // deletes the typings folder after bundling it.
-        })
-    ]
-}
-```
 
 ### Have Fun!
