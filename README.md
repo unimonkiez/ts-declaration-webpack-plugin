@@ -1,11 +1,11 @@
-# dts-webpack-bundler
+# ts-declaration-webpack-plugin
 
 This Webpack plugin generate a single TypeScript *.d.ts declaration file per entry.
 
 ### Installation
 
 ```shell
-$ npm install dts-webpack-bundler --save-dev
+$ npm install ts-declaration-webpack-plugin --save-dev
 ```
 
 ### Usage
@@ -13,7 +13,7 @@ $ npm install dts-webpack-bundler --save-dev
 * Simply add the plugin to `webpack.config.js`:
 
     ```javascript
-    const DtsWebpackBundler = require('dts-webpack-bundler');
+    const TsDeclarationWebpackPlugin = require('ts-declaration-webpack-plugin');
 
     module.exports = {
         entry: {
@@ -22,10 +22,10 @@ $ npm install dts-webpack-bundler --save-dev
         },
         output: {
             path: path.resolve('./dist'),
-            filename: '[name].js'
+            filename: '[name].js',
         },
         plugins: [
-            new DtsWebpackBundler()
+            new TsDeclarationWebpackPlugin(),
         ]
     }
     ```
@@ -33,7 +33,7 @@ $ npm install dts-webpack-bundler --save-dev
 
 ### Options
 ```js
-new DtsWebpackBundler({
+new TsDeclarationWebpackPlugin({
     name: '[name].d.ts', // Not required, '[name].d.ts' by default (to match output fileName)
     test: /\.tsx$/, // Not required, filters '.ts' and '.tsx' by default
 })

@@ -1,5 +1,5 @@
 {
-  "name": "dts-webpack-bundler",
+  "name": "ts-declaration-webpack-plugin",
   "version": "1.0.3",
   "description": "Bundler for your ts / tsx files that actually works",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eliraz-refael/dts-webpack-bundler.git"
+    "url": "git+https://github.com/unimonkiez/ts-declaration-webpack-plugin.git"
   },
   "keywords": [
     "dts",
@@ -17,14 +17,17 @@
     "webpack",
     "bundler"
   ],
-  "author": "Eliraz Kedmi",
+  "author": "unimonkiez",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/eliraz-refael/dts-webpack-bundler/issues"
+    "url": "https://github.com/unimonkiez/ts-declaration-webpack-plugin/issues"
   },
-  "homepage": "https://github.com/eliraz-refael/dts-webpack-bundler#readme",
+  "homepage": "https://github.com/unimonkiez/ts-declaration-webpack-plugin#readme",
   "dependencies": {
     "dts-bundle-generator": "^1.6.1",
     "loader-utils": "^1.1.0"
+  },
+  "peerDependencies": {
+    "webpack": "^4.0.0"
   }
 }
