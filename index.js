@@ -25,13 +25,13 @@ module.exports = class DtsBundlePlugin {
 						const dts = generateDtsBundle(module.resource);
 						const dtsName = loaderUtils.interpolateName(
 							{
-								resourcePath: chunk.name + '.js',
+								resourcePath: `./${chunk.name}.js`,
 							},
 							this.name,
 							{},
 						);
-						
-						compilation.assets[`${chunk.name}.d.ts`] = {
+
+						compilation.assets[dtsName] = {
 							source() {
 								return dts;
 							},
