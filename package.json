@@ -1,23 +1,23 @@
 {
-  "name": "ts-declaration-webpack-plugin",
-  "version": "1.2.0",
-  "description": "Bundler for your ts / tsx files that actually works",
+  "name": "ts-specific-declarations-webpack-plugin",
+  "version": "1.0.0",
+  "description": "Bundler ts / tsx",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/unimonkiez/ts-declaration-webpack-plugin.git"
+    "url": "git+https://github.com/ts-specific-declarations-webpack-plugin.git"
   },
   "keywords": [
     "dts",
-    "defenition-files",
-    "typscript",
+    "definition-files",
+    "typescript",
     "webpack",
     "bundler"
   ],
-  "author": "unimonkiez",
+  "author": "metju90",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/unimonkiez/ts-declaration-webpack-plugin/issues"
