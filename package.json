@@ -1,7 +1,7 @@
 {
   "name": "ts-specific-declarations-webpack-plugin",
-  "version": "1.0.1",
-  "description": "Bundler ts / tsx",
+  "version": "1.0.2",
+  "description": "Bundles Typescript declaration files for [specified] entries",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
