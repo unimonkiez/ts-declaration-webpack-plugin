@@ -1,6 +1,6 @@
 {
   "name": "ts-specific-declarations-webpack-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Bundler ts / tsx",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ts-specific-declarations-webpack-plugin.git"
+    "url": "https://github.com/metju90/ts-specific-declarations-webpack-plugin"
   },
   "keywords": [
     "dts",
@@ -20,9 +20,9 @@
   "author": "metju90",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/unimonkiez/ts-declaration-webpack-plugin/issues"
+    "url": "https://github.com/metju90/ts-specific-declarations-webpack-plugin/issues"
   },
-  "homepage": "https://github.com/unimonkiez/ts-declaration-webpack-plugin#readme",
+  "homepage": "https://github.com/metju90/ts-specific-declarations-webpack-plugin#readme",
   "dependencies": {
     "dts-bundle-generator": "^1.6.1",
     "loader-utils": "^1.1.0"
