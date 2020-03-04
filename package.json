@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/unimonkiez/ts-declaration-webpack-plugin#readme",
   "dependencies": {
-    "dts-bundle-generator": "^1.6.1",
+    "dts-bundle-generator": "^3.3.1",
     "loader-utils": "^1.1.0"
   },
   "peerDependencies": {
