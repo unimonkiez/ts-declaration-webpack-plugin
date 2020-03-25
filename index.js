@@ -22,7 +22,7 @@ module.exports = class DtsBundlePlugin {
             compilation.entrypoints.forEach(entrypoint => {
                 entrypoint.origins.forEach(element => {
                     if (runTest(this.test, element.request)) {
-                        const dts = generateDtsBundle(element.request);
+                        const dts = generateDtsBundle([{filePath: element.request}]);
                         const name = this.name;
                         const dtsName = loaderUtils.interpolateName(
                             {
