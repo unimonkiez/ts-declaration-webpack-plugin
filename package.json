@@ -4,7 +4,10 @@
   "description": "Bundler for your ts / tsx files that actually works",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
+    "lint:err": "npm run lint -- --quiet",
+    "lint:fix": "npm run lint -- --fix",
+    "lint:report": "npm run lint -- --format html -o ./report.html"
   },
   "repository": {
     "type": "git",
@@ -29,5 +32,10 @@
   },
   "peerDependencies": {
     "webpack": "^4.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.1"
   }
 }
