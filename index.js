@@ -17,7 +17,7 @@ module.exports = class DtsBundlePlugin {
   }
 
   apply(compiler) {
-    compiler.plugin('emit', (compilation, callback) => {
+    compiler.hooks.emit.tap('Emiter', (compilation, callback) => {
       compilation.entrypoints.forEach((entrypoint) => {
         entrypoint.origins.forEach((element) => {
           if (runTest(this.test, element.request)) {
